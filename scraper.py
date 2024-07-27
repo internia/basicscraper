@@ -34,7 +34,9 @@ def get_browser(browser_name="chrome"):
     return driver
 
 try:
-    URL = "https://www.vinted.co.uk/catalog?search_text=blue+top" #TODO: change the search term to be defined by a user input string
+    print("Enter search term: ")
+    searchterm = input()
+    URL = "https://www.vinted.co.uk/catalog?search_text={}".format(searchterm) #TODO: change the search term to be defined by a user input string from website
     driver = get_browser("firefox")  #TODO: change based on detected browser on web load
     driver.get(URL)
     print("Fetched the URL...")
